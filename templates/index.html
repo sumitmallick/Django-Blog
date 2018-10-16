@@ -3,18 +3,19 @@
 {% block body %}
 
 <div class="jumbotron text-center">
-        <h3>Yazılım Bilimi Bloğuna Hoşgeldiniz</h3>
-        <p>Bu blogta geliştiriciler olarak blog yazılarınızı paylaşabilirsiniz ve insanlara yardımcı olabilirsiniz.</p>
+<h3>
+        {% if request.user.is_authenticated %}
+               You have successfully logged in as - {{request.user.username}}
+        {% else %}
+                Unassigned
+        {% endif %}
+
+</h3>
+<br>
+        <h2><u>In this blog you can share your blog posts as developers and help people.</u></h2>
 </div>
 
 
-<p>
-        {% if request.user.is_authenticated %}
-                Giriş Yapılmış, {{request.user.username}}
-        {% else %}
-                Giriş Yapılmamış
-        {% endif %}
 
-</p>
 {% endblock body %}
 

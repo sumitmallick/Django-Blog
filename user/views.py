@@ -13,14 +13,17 @@ def register(request):
     form = RegisterForm(request.POST or None)
     if form.is_valid():
         username = form.cleaned_data.get("username")
+        first_name = form.cleaned_data.get("first_name")
+        last_name = form.cleaned_data.get("last_name")
+        email = form.cleaned_data.get("email")
         password = form.cleaned_data.get("password")
 
-        newUser = User(username =username)
+        newUser = User(username =username, email = email, first_name = first_name, last_name = last_name)
         newUser.set_password(password)
 
         newUser.save()
         login(request,newUser)
-        messages.info(request,"Başarıyla Kayıt Oldunuz...")
+        messages.info(request,"You have successfully registered ...")
 
         return redirect("index")
     context = {

@@ -2,16 +2,17 @@
 {% block body %}
 {% load crispy_forms_tags %}
 
+<div  class="container" style="text-align: center;>
 <div class="row">
     <div class="col-md-6 offset-md-3">
-        <h3>Giriş Yap</h3>
+        <h1>Login</h1>
         <hr>
         <form method = "post">
             {% csrf_token %}
             
             {{form|crispy}}
             <br>
-            <button type = "submit" class = "btn btn-danger">Giriş Yap</button>
+            <button type = "submit" class = "btn btn-danger">login</button>
         </form>
     </div>
   </div>
