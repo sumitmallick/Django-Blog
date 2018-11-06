@@ -22,7 +22,7 @@ class RegisterForm(forms.Form):
         confirm = self.cleaned_data.get("confirm")
 
         if password and email and confirm and password != confirm:
-            raise forms.ValidationError("Parolalar Eşleşmiyor")
+            raise forms.ValidationError("Passwords Do Not Match")
 
         values = {
             "username" : username,

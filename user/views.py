@@ -47,15 +47,15 @@ def loginUser(request):
         user = authenticate(username = username,password = password)
 
         if user is None:
-            messages.info(request,"Kullanıcı Adı veya Parola Hatalı")
+            messages.info(request,"Incorrect Credentials")
             return render(request,"login.html",context)
 
-        messages.success(request,"Başarıyla Giriş Yaptınız")
+        messages.success(request,"Successfully logged In")
         login(request,user)
         return redirect("index")
     return render(request,"login.html",context)
 def logoutUser(request):
     logout(request)
-    messages.success(request,"Başarıyla Çıkış Yaptınız")
+    messages.success(request,"Successfully logged out")
     return redirect("index")
 
