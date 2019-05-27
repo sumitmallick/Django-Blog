@@ -7,10 +7,10 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'about'  %}">About</a>
+              <a style="color:white; padding-top: 12px;" class="nav-link" href="{% url 'about'  %}">About</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'article:articles'  %}">Articles</a>
+                <a style="color:white; padding-top: 12px;" class="nav-link" href="{% url 'article:articles'  %}">Articles</a>
             </li>
             
           </ul>
@@ -18,7 +18,7 @@
           <ul class="navbar-nav ml-auto">
           {% if request.user.is_authenticated %}
           <li class="nav-item">
-                <p style="color:antiquewhite;">{{ request.user.username }}</p>
+                <p style="color:antiquewhite; padding-top: 9px;">{{ request.user.username }}</p>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'article:dashboard'  %}">Dashboard</a>
